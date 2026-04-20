@@ -26,11 +26,11 @@ export default function NotesClient({ tag }: Props) {
         setPage(1);
     }, 500);
 
-    const searchValue = tag === 'all' ? '' : tag ?? '';
+    const activeTag = tag === 'all' ? '' : tag ?? '';
 
     const { data, isLoading, isError } = useQuery({
-        queryKey: ['notes',  page, search , searchValue],
-        queryFn: () => fetchNotes(page, searchValue || search),
+        queryKey: ['notes',  page, search , activeTag],
+        queryFn: () => fetchNotes(page, search, activeTag),
         placeholderData: keepPreviousData,
     });
 

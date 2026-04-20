@@ -1,3 +1,1 @@
-export default function Default() {
-    return null;
-}
+export { default } from '@/components/SidebarNotes/SidebarNotes';
